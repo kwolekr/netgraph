@@ -1,0 +1,164 @@
+# Example network description file for netgraph
+
+host asdf {
+	ip    = 192.168.1.47
+	os    = FreeBSD
+	model = eMachines T6412
+	descr = main computer
+	flags = p
+	conns = moe f
+}
+
+host blah {
+	ip    = 192.168.1.46
+	os    = FreeBSD
+	model = IBM 300PL
+	descr = main production server\n(http, ftp, dhcp, pxe,\ntorrent seedbox)
+	flags = e
+	conns = moe f
+}
+
+host blarg {
+	ip    = 192.168.1.45
+ 	os    = FreeBSD
+	model = Compaq Presario CQ-60
+	descr = laptop
+	flags = l
+	conns = moe g
+}
+
+host durka {
+	ip    = 192.168.1.44
+	os    = FreeBSD
+	model = Whitebox PC
+	descr = NAS, development server
+	flags = e
+	conns = moe f
+}
+
+host moe {
+	ip    = 192.168.1.2
+	os    = CiscoIOS
+	model = Cisco Catalyst 2924XL
+	descr = main switch
+	flags = s
+	conns = hueg.co.cc g asdf f blah f netgear f motoko f
+	conns = misaki f rs6000 f durka f blarg g leah f laura f
+}
+
+host hueg.co.cc {
+	ip    = 192.168.1.1
+	os    = N/A
+	model = Westell 6100
+	descr = modem/router
+	flags = rb
+	conns = moe g
+}
+
+host netgear {
+	ip    = 0.0.0.0
+	op    = N/A
+	model = Netgear FS108
+	descr =
+	flags = su
+	conns = euclid f euler f newton f fermat f gauss f moe f
+}
+
+host leah {
+	ip    = 192.168.1.44
+	os    = Solaris
+	model = Sun Blade 100
+	descr = SPARC workstation
+	flags = p
+	conns = moe f
+}
+
+host laura {
+	ip    = 192.168.1.43
+	os    = Solaris
+	model = Netra X1
+	descr = DNS, JumpStart
+	flags = e
+	conns = moe f
+}
+
+#host lilith {
+#	ip    = 192.168.1.42
+#	os    = Solaris
+#	model = VirtualBox 3.2.8 OSE
+#	descr = Solaris x86 testing
+#	flags = v
+#	conns = blarg v
+#}
+
+host motoko {
+	ip    = 192.168.1.29
+	os    = NetBSD
+	model = Cobalt Raq2
+	descr = MIPS devel, irc bot
+	flags = e
+	conns = moe f
+}
+
+host misaki {
+	ip    = 192.168.1.41
+	os    = HP-UX
+	model = HP Visualize B1000
+	descr = PA-RISC workstation
+	flags = p
+	conns = moe f
+}
+
+host rs6000 {
+	ip    = 192.168.1.40
+	os    = AIX
+	model = IBM RS/6000 Model 44P
+	descr = POWER workstation
+	flags = p
+	conns = moe f
+}
+
+host euclid {
+	ip    = 192.168.1.30
+	os    = FreeBSD
+	model = Monorail PC
+	descr = Cluster master
+	flags = n
+	conns = netgear f
+}
+
+host euler {
+	ip    = 192.168.1.31
+	os    = FreeBSD
+	model = Dell Dimension XPS T600
+	descr = Cluster node
+	flags = n
+	conns = netgear f
+}
+
+host newton {
+	ip    = 192.168.1.32
+	os    = FreeBSD
+	model = Dell Dimension XPS T700
+	descr = Cluster node
+	flags = n
+	conns = netgear f
+}
+
+host fermat {
+	ip    = 192.168.1.33 
+	os    = FreeBSD
+	model = Dell Dimension XPS T650
+	descr = Cluster node
+	flags = n
+	conns = netgear f
+}
+
+host gauss {
+	ip    = 192.168.1.34
+	os    = FreeBSD
+	model = Dell Dimension XPS T600
+	descr = Cluster node
+	flags = n
+	conns = netgear f
+}
